@@ -1,0 +1,35 @@
+service: project-restapi
+
+frameworkVersion: '4'
+
+provider:
+  name: aws
+  runtime: nodejs22.x
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'ap-south-1'}
+  memorySize: 512
+  timeout: 30
+  environment:
+    TEST_VAR : TEST_VAR_VALUE-${self:provider.stage}
+    DB_USERNAME_PS: ${ssm:/db_username_ps}
+    DB_PASSWORD_PS: ${ssm:/db_password_ps}
+    DB_USERNAME_SM : ${self:custom.DB_ADMIN_SM.username}
+    DB_PASSWORD_SM : ${self:custom.DB_ADMIN_SM.password}
+
+plugins:
+  - serverless-offline
+
+custom:
+  DB_ADMIN_SM : ${ssm:/aws/reference/secretsmanager/db2_admin_sm}
+
+functions:
+  user:
+    handler: functions/user/user.post
+    description: "Creates a new user"
+    environment:
+      TEST_VAR_FS: "TEST_VAR_FS_VALUE"
+    events:
+      - http:
+          path: user
+          method: post
+          cors: true
