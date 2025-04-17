@@ -91,7 +91,7 @@
       "Properties": {
         "Code": {
           "S3Bucket": "serverless-framework-deployments-ap-south-1-93146542-111f",
-          "S3Key": "serverless/project-restapi/dev/1744852810213-2025-04-17T01:20:10.213Z/project-restapi.zip"
+          "S3Key": "serverless/project-restapi/dev/1744854133677-2025-04-17T01:42:13.677Z/project-restapi.zip"
         },
         "Handler": "functions/user/user.post",
         "Runtime": "nodejs22.x",
@@ -120,14 +120,14 @@
         "UserLogGroup"
       ]
     },
-    "UserLambdaVersionhtyPbYf5kbKtYmcXKLQ0N2unXBeEHf2XO8mJuYxcNg": {
+    "UserLambdaVersionGu5R4KE6WGwMrkOBt8t1TmMDTKU7AJb5R2V4NHo": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "UserLambdaFunction"
         },
-        "CodeSha256": "yFcBsCfct2SEg8YvxEY9DpmVcCYw1mDqQh74Y1q4lgQ=",
+        "CodeSha256": "0vARTSGC6/ZcTwdMSFYdNqCVBH2dy4TvsjY1+X2HUkE=",
         "Description": "Creates a new user"
       }
     },
@@ -249,7 +249,7 @@
         "UserLambdaPermissionApiGateway"
       ]
     },
-    "ApiGatewayDeployment1744852798285": {
+    "ApiGatewayDeployment1744854123246": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -310,7 +310,7 @@
     "UserLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "UserLambdaVersionhtyPbYf5kbKtYmcXKLQ0N2unXBeEHf2XO8mJuYxcNg"
+        "Ref": "UserLambdaVersionGu5R4KE6WGwMrkOBt8t1TmMDTKU7AJb5R2V4NHo"
       },
       "Export": {
         "Name": "sls-project-restapi-dev-UserLambdaFunctionQualifiedArn"
