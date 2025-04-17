@@ -16,7 +16,8 @@ module.exports.post = async (event, context) => {
       DB_PASSWORD : `${process.env.DB_PASSWORD_PS}`,
       DB_USERNAME_SM : `${process.env.DB_USERNAME_SM}`,
       DB_PASSWORD_SM : `${process.env.DB_PASSWORD_SM}`,
-      VAR_FROM_ENV_FILE: `${process.env.VAR_FROM_ENV_FILE}`,
+      VAR_FROM_ENV_FILE : `${process.env.VAR_FROM_ENV_FILE}`,
+      ENV_VAR_USING_PLUGIN : `${process.env.ENV_VAR_USING_PLUGIN}`,
       input: event,
     }),
   };

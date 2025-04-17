@@ -18,7 +18,8 @@
           "DB_USERNAME_PS": "psdbusername",
           "DB_PASSWORD_PS": "<REDACTED>",
           "DB_USERNAME_SM": "admin",
-          "DB_PASSWORD_SM": "<REDACTED>"
+          "DB_PASSWORD_SM": "<REDACTED>",
+          "VAR_FROM_ENV_FILE": "loadFromEnvFIle"
         },
         "versionFunctions": true,
         "compiledCloudFormationTemplate": {
@@ -114,7 +115,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-ap-south-1-93146542-111f",
-                  "S3Key": "serverless/project-restapi/dev/1744854133677-2025-04-17T01:42:13.677Z/project-restapi.zip"
+                  "S3Key": "serverless/project-restapi/dev/1744855703594-2025-04-17T02:08:23.594Z/project-restapi.zip"
                 },
                 "Handler": "functions/user/user.post",
                 "Runtime": "nodejs22.x",
@@ -129,7 +130,9 @@
                     "DB_PASSWORD_PS": "<REDACTED>",
                     "DB_USERNAME_SM": "admin",
                     "DB_PASSWORD_SM": "<REDACTED>",
-                    "TEST_VAR_FS": "TEST_VAR_FS_VALUE"
+                    "VAR_FROM_ENV_FILE": "loadFromEnvFIle",
+                    "TEST_VAR_FS": "TEST_VAR_FS_VALUE",
+                    "ENV_VAR_USING_PLUGIN": "loadFromEnvFIle-aws"
                   }
                 },
                 "Role": {
@@ -143,14 +146,14 @@
                 "UserLogGroup"
               ]
             },
-            "UserLambdaVersionGu5R4KE6WGwMrkOBt8t1TmMDTKU7AJb5R2V4NHo": {
+            "UserLambdaVersionxaOeT6qc9e90m8BnspAJMsTXUBwDVKlGwCXCFo": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "UserLambdaFunction"
                 },
-                "CodeSha256": "0vARTSGC6/ZcTwdMSFYdNqCVBH2dy4TvsjY1+X2HUkE=",
+                "CodeSha256": "D/giM9BNJ1bqE1x22p0T317T0AffmDhp5AmsAs18rhM=",
                 "Description": "Creates a new user"
               }
             },
@@ -272,7 +275,7 @@
                 "UserLambdaPermissionApiGateway"
               ]
             },
-            "ApiGatewayDeployment1744854123246": {
+            "ApiGatewayDeployment1744855693893": {
               "Type": "AWS::ApiGateway::Deployment",
               "Properties": {
                 "RestApiId": {
@@ -333,7 +336,7 @@
             "UserLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "UserLambdaVersionGu5R4KE6WGwMrkOBt8t1TmMDTKU7AJb5R2V4NHo"
+                "Ref": "UserLambdaVersionxaOeT6qc9e90m8BnspAJMsTXUBwDVKlGwCXCFo"
               },
               "Export": {
                 "Name": "sls-project-restapi-dev-UserLambdaFunctionQualifiedArn"
@@ -370,7 +373,8 @@
         "vpc": {}
       },
       "plugins": [
-        "serverless-offline"
+        "serverless-offline",
+        "serverless-dotenv-plugin"
       ],
       "custom": {
         "DB_ADMIN_SM": {
@@ -383,7 +387,8 @@
           "handler": "functions/user/user.post",
           "description": "Creates a new user",
           "environment": {
-            "TEST_VAR_FS": "TEST_VAR_FS_VALUE"
+            "TEST_VAR_FS": "TEST_VAR_FS_VALUE",
+            "ENV_VAR_USING_PLUGIN": "loadFromEnvFIle-aws"
           },
           "events": [
             {
@@ -417,7 +422,7 @@
           "timeout": 30,
           "runtime": "nodejs22.x",
           "vpc": {},
-          "versionLogicalId": "UserLambdaVersionGu5R4KE6WGwMrkOBt8t1TmMDTKU7AJb5R2V4NHo"
+          "versionLogicalId": "UserLambdaVersionxaOeT6qc9e90m8BnspAJMsTXUBwDVKlGwCXCFo"
         }
       }
     },
@@ -433,7 +438,8 @@
         "DB_USERNAME_PS": "psdbusername",
         "DB_PASSWORD_PS": "<REDACTED>",
         "DB_USERNAME_SM": "admin",
-        "DB_PASSWORD_SM": "<REDACTED>"
+        "DB_PASSWORD_SM": "<REDACTED>",
+        "VAR_FROM_ENV_FILE": "loadFromEnvFIle"
       },
       "versionFunctions": true,
       "compiledCloudFormationTemplate": {
@@ -529,7 +535,7 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "serverless-framework-deployments-ap-south-1-93146542-111f",
-                "S3Key": "serverless/project-restapi/dev/1744854133677-2025-04-17T01:42:13.677Z/project-restapi.zip"
+                "S3Key": "serverless/project-restapi/dev/1744855703594-2025-04-17T02:08:23.594Z/project-restapi.zip"
               },
               "Handler": "functions/user/user.post",
               "Runtime": "nodejs22.x",
@@ -544,7 +550,9 @@
                   "DB_PASSWORD_PS": "<REDACTED>",
                   "DB_USERNAME_SM": "admin",
                   "DB_PASSWORD_SM": "<REDACTED>",
-                  "TEST_VAR_FS": "TEST_VAR_FS_VALUE"
+                  "VAR_FROM_ENV_FILE": "loadFromEnvFIle",
+                  "TEST_VAR_FS": "TEST_VAR_FS_VALUE",
+                  "ENV_VAR_USING_PLUGIN": "loadFromEnvFIle-aws"
                 }
               },
               "Role": {
@@ -558,14 +566,14 @@
               "UserLogGroup"
             ]
           },
-          "UserLambdaVersionGu5R4KE6WGwMrkOBt8t1TmMDTKU7AJb5R2V4NHo": {
+          "UserLambdaVersionxaOeT6qc9e90m8BnspAJMsTXUBwDVKlGwCXCFo": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "UserLambdaFunction"
               },
-              "CodeSha256": "0vARTSGC6/ZcTwdMSFYdNqCVBH2dy4TvsjY1+X2HUkE=",
+              "CodeSha256": "D/giM9BNJ1bqE1x22p0T317T0AffmDhp5AmsAs18rhM=",
               "Description": "Creates a new user"
             }
           },
@@ -687,7 +695,7 @@
               "UserLambdaPermissionApiGateway"
             ]
           },
-          "ApiGatewayDeployment1744854123246": {
+          "ApiGatewayDeployment1744855693893": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -748,7 +756,7 @@
           "UserLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "UserLambdaVersionGu5R4KE6WGwMrkOBt8t1TmMDTKU7AJb5R2V4NHo"
+              "Ref": "UserLambdaVersionxaOeT6qc9e90m8BnspAJMsTXUBwDVKlGwCXCFo"
             },
             "Export": {
               "Name": "sls-project-restapi-dev-UserLambdaFunctionQualifiedArn"
@@ -793,7 +801,7 @@
       "serviceProvider": null,
       "instanceParameters": null
     },
-    "serviceRawFile": "service: project-restapi\n\nframeworkVersion: '4'\n\nprovider:\n  name: aws\n  runtime: nodejs22.x\n  stage: ${opt:stage, 'dev'}\n  region: ${opt:region, 'ap-south-1'}\n  memorySize: 512\n  timeout: 30\n  environment:\n    TEST_VAR : TEST_VAR_VALUE-${self:provider.stage}\n    DB_USERNAME_PS: ${ssm:/db_username_ps}\n    DB_PASSWORD_PS: ${ssm:/db_password_ps}\n    DB_USERNAME_SM : ${self:custom.DB_ADMIN_SM.username}\n    DB_PASSWORD_SM : ${self:custom.DB_ADMIN_SM.password}\n\nplugins:\n  - serverless-offline\n\ncustom:\n  DB_ADMIN_SM : ${ssm:/aws/reference/secretsmanager/db2_admin_sm}\n\nfunctions:\n  user:\n    handler: functions/user/user.post\n    description: \"Creates a new user\"\n    environment:\n      TEST_VAR_FS: \"TEST_VAR_FS_VALUE\"\n    events:\n      - http:\n          path: user\n          method: post\n          cors: true\n",
+    "serviceRawFile": "service: project-restapi\n\nframeworkVersion: '4'\n\nprovider:\n  name: aws\n  runtime: nodejs22.x\n  stage: ${opt:stage, 'dev'}\n  region: ${opt:region, 'ap-south-1'}\n  memorySize: 512\n  timeout: 30\n  environment:\n    TEST_VAR : TEST_VAR_VALUE-${self:provider.stage}\n    DB_USERNAME_PS: ${ssm:/db_username_ps}\n    DB_PASSWORD_PS: ${ssm:/db_password_ps}\n    DB_USERNAME_SM : ${self:custom.DB_ADMIN_SM.username}\n    DB_PASSWORD_SM : ${self:custom.DB_ADMIN_SM.password}\n\nplugins:\n  - serverless-offline\n  - serverless-dotenv-plugin\n\ncustom:\n  DB_ADMIN_SM : ${ssm:/aws/reference/secretsmanager/db2_admin_sm}\n\nfunctions:\n  user:\n    handler: functions/user/user.post\n    description: \"Creates a new user\"\n    environment:\n      TEST_VAR_FS: \"TEST_VAR_FS_VALUE\"\n      ENV_VAR_USING_PLUGIN : ${env:VAR_FROM_ENV_FILE}-${self:provider.name}\n    events:\n      - http:\n          path: user\n          method: post\n          cors: true\n",
     "command": [
       "deploy"
     ],
@@ -809,12 +817,12 @@
     "serviceProviderAwsCfStackName": "project-restapi-dev",
     "serviceProviderAwsCfStackId": "arn:aws:cloudformation:ap-south-1:089813482727:stack/project-restapi-dev/a0b0b550-19ac-11f0-8d94-02019f54b187",
     "serviceProviderAwsCfStackCreated": "2025-04-15T03:49:27.043Z",
-    "serviceProviderAwsCfStackUpdated": "2025-04-17T01:20:15.048Z",
+    "serviceProviderAwsCfStackUpdated": "2025-04-17T01:42:18.445Z",
     "serviceProviderAwsCfStackStatus": "UPDATE_COMPLETE",
     "serviceProviderAwsCfStackOutputs": [
       {
         "OutputKey": "UserLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:ap-south-1:089813482727:function:project-restapi-dev-user:4",
+        "OutputValue": "arn:aws:lambda:ap-south-1:089813482727:function:project-restapi-dev-user:5",
         "Description": "Current Lambda function version",
         "ExportName": "sls-project-restapi-dev-UserLambdaFunctionQualifiedArn"
       },
@@ -923,7 +931,7 @@
           "Properties": {
             "Code": {
               "S3Bucket": "serverless-framework-deployments-ap-south-1-93146542-111f",
-              "S3Key": "serverless/project-restapi/dev/1744854133677-2025-04-17T01:42:13.677Z/project-restapi.zip"
+              "S3Key": "serverless/project-restapi/dev/1744855703594-2025-04-17T02:08:23.594Z/project-restapi.zip"
             },
             "Handler": "functions/user/user.post",
             "Runtime": "nodejs22.x",
@@ -938,7 +946,9 @@
                 "DB_PASSWORD_PS": "<REDACTED>",
                 "DB_USERNAME_SM": "admin",
                 "DB_PASSWORD_SM": "<REDACTED>",
-                "TEST_VAR_FS": "TEST_VAR_FS_VALUE"
+                "VAR_FROM_ENV_FILE": "loadFromEnvFIle",
+                "TEST_VAR_FS": "TEST_VAR_FS_VALUE",
+                "ENV_VAR_USING_PLUGIN": "loadFromEnvFIle-aws"
               }
             },
             "Role": {
@@ -952,14 +962,14 @@
             "UserLogGroup"
           ]
         },
-        "UserLambdaVersionGu5R4KE6WGwMrkOBt8t1TmMDTKU7AJb5R2V4NHo": {
+        "UserLambdaVersionxaOeT6qc9e90m8BnspAJMsTXUBwDVKlGwCXCFo": {
           "Type": "AWS::Lambda::Version",
           "DeletionPolicy": "Retain",
           "Properties": {
             "FunctionName": {
               "Ref": "UserLambdaFunction"
             },
-            "CodeSha256": "0vARTSGC6/ZcTwdMSFYdNqCVBH2dy4TvsjY1+X2HUkE=",
+            "CodeSha256": "D/giM9BNJ1bqE1x22p0T317T0AffmDhp5AmsAs18rhM=",
             "Description": "Creates a new user"
           }
         },
@@ -1081,7 +1091,7 @@
             "UserLambdaPermissionApiGateway"
           ]
         },
-        "ApiGatewayDeployment1744854123246": {
+        "ApiGatewayDeployment1744855693893": {
           "Type": "AWS::ApiGateway::Deployment",
           "Properties": {
             "RestApiId": {
@@ -1142,7 +1152,7 @@
         "UserLambdaFunctionQualifiedArn": {
           "Description": "Current Lambda function version",
           "Value": {
-            "Ref": "UserLambdaVersionGu5R4KE6WGwMrkOBt8t1TmMDTKU7AJb5R2V4NHo"
+            "Ref": "UserLambdaVersionxaOeT6qc9e90m8BnspAJMsTXUBwDVKlGwCXCFo"
           },
           "Export": {
             "Name": "sls-project-restapi-dev-UserLambdaFunctionQualifiedArn"
